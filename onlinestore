@@ -1,0 +1,41 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class OnlineStore {
+    private List<String> shoppingCart;
+
+    public OnlineStore() {
+        this.shoppingCart = new ArrayList<>();
+    }
+
+    public void addItemToCart(String item) {
+        shoppingCart.add(item);
+    }
+
+    public void removeItemFromCart(String item) {
+        shoppingCart.remove(item);
+    }
+
+    public List<String> getShoppingCart() {
+        return shoppingCart;
+    }
+
+    public static void main(String[] args) {
+        OnlineStore store = new OnlineStore();
+        store.addItemToCart("Item 1");
+        store.addItemToCart("Item 2");
+        store.addItemToCart("Item 3");
+
+        System.out.println("Items in the cart:");
+        for (String item : store.getShoppingCart()) {
+            System.out.println(item);
+        }
+
+        store.removeItemFromCart("Item 2");
+
+        System.out.println("\nItems in the cart after removal:");
+        for (String item : store.getShoppingCart()) {
+            System.out.println(item);
+        }
+    }
+}
